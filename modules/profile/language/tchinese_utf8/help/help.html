@@ -1,0 +1,62 @@
+<div id="help-template" class="outer">
+    <h1 class="head">協助：<a class="ui-corner-all tooltip" href="<{$xoops_url}>/modules/profile/admin/index.php" title="回「Profile 使用者管理」管理界面"> Profile 使用者管理 <img src="<{xoAdminIcons home.png}>" alt="回「Profile 使用者管理」管理界面"/></a></h1>
+    <!-- -----Help Content ---------- -->
+    <h4 class="odd">說明</h4>
+
+    <p class="even">Profile 使用者管理模組是讓您用來管理會員並自訂一些使用者欄位</p>
+    <h4 class="odd">安裝/反安裝</h4>
+
+    <p>安裝無特別需求，按照一般模組安裝方式進行即可：解壓此模組，將 profile 資料夾上傳或複製到 modules 目錄下，接著從「後台→模組」來安裝之即可。</p>
+
+    <p>更詳細的安裝說明可參考 <a href="https://www.gitbook.com/book/xoops/xoops-operations-guide/" target="_blank" title="XOOPS 操作手冊（英文）">XOOPS 操作手冊（英文）</a> <br><br></p>
+    <h4 class="odd">操作說明</h4>
+
+    <p class="even">幾個常用動作：</p>
+    <ul>
+        <li>設定此模組的偏好設定並且加入您想安裝的區塊。</li>
+        <li>編輯現有的類別，或者去新增一些新類別。</li>
+        <li>編輯現有的欄位，或者去新增一些新欄位。您可以指定哪個欄位要出現哪個類別中，還有是否要在註冊流程中使用該欄位。</li>
+        <li>定義註冊流程的順序</li>
+        <li>您可針對任一欄位來設定權限，設定誰可以搜尋該欄位。<br><br></li>
+    </ul>
+    <h4 class="odd">防治垃圾帳號</h4>
+
+    <p class="even">為了盡量避免垃圾帳號來註冊，可以試試以下操作：</p>
+
+    <ul>
+        <li> 開啟 Protector 防護模組並到其後台，至偏好設定的下方，找到此設定：
+
+            "防治垃圾留言"
+            檢查發布資料是否有在 www.stopforumspam.com 資料庫中。<br>
+            並將其設定倒 "IP黑名單"中
+        </li>
+        <br>
+
+        <li> 在 /class/captcha/config.php 確認其 mode 是設定為 "text"：<br><br>
+
+    <span style="font-style: italic;">     return $config = array(<br>
+    'disabled' => false, // Disable CAPTCHA<br>
+    'mode' => 'text', // default mode, you can choose 'text', 'image', 'recaptcha'(requires api key)<br>
+    'name' => 'xoopscaptcha', // captcha name<br>
+    'skipmember' => true, // Skip CAPTCHA check for members<br>
+    'maxattempts' => 10, // Maximum attempts for each session<br>
+    );</span></li>
+        <br>
+
+        <li> 在 Profile 使用者管理模組中，到後台，並於基本步驟執行：<br>
+
+            /modules/profile/admin/step.php?id=1<br>
+
+            將「該步驟是否有資料需儲存」設為「否」
+        </li>
+        <br><br>
+
+        <li> 在 Profile 使用者管理模組偏好設定中，設定「使用 Captcha 驗證於註冊的第二步驟」選項為 "是" （這是預設值）</li>
+        <br>
+        <ul>
+
+            <h4 class="odd">教學</h4>
+
+            <p class="even">教學內容尚在製作中<br></p>
+            <!-- -----Help Content ---------- -->
+</div>

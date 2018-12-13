@@ -1,0 +1,1 @@
+tinyMCE.addI18n('tw_utf8.paste_dlg',{word_title:"按鍵盤的CTRL + V來將文字貼到視窗中",text_linebreaks:"保留換行",text_title:"按鍵盤的CTRL + V來將文字貼到視窗中"});
