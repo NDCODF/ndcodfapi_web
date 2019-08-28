@@ -1,0 +1,38 @@
+h5.textcolor {
+    color: black;
+}
+a:link.commonlink  {
+    color: #333333;
+}
+a:visited.commonlink  {
+    color: #333333;
+}
+a:hover.commonlink  {
+    color: #333333;
+}
+a:link.deletelink  {
+    color: red;
+}
+a:visited.deletelink  {
+    color: red;
+}
+a:hover.deletelink  {
+    color: red;
+}
+a:link.otherlink  {
+    color: #333333;
+}
+a:visited.otherlink  {
+    color: #333333;
+}
+a:hover.otherlink  {
+    color: #333333;
+}
+
+.title-btn {
+    background-color: #9f9ff0;
+}
+.title-btn:hover {
+    cursor: auto;
+    background-color: #9f9ff0;
+}
