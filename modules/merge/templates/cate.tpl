@@ -1,17 +1,17 @@
-<h3>新增類別</h3>
+<h3><{$smarty.const._MERGE_CATE_TITLE}></h3>
 <div class="modal" id="editWin" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h5 class="modal-title" id="modalLabel">變更類別名稱</h5>
+        <h5 class="modal-title" id="modalLabel"><{$smarty.const._MERGE_CATE_CHANGEPAGE_TITLE}></h5>
       </div>
       <div class="modal-body">
         <input class="form-control" type="text" value="" cid="" origtitle="">
       </div>
       <div class="modal-footer">
-        <button type="button" class="editabi btn btn-default btn-sm">更名</button>
-        <button type="button" class="closewin btn btn-default btn-sm" data-dismiss="modal">關閉</button>
+        <button type="button" class="editabi btn btn-default btn-sm"><{$smarty.const._MERGE_CATE_RENAME}></button>
+        <button type="button" class="closewin btn btn-default btn-sm" data-dismiss="modal"><{$smarty.const._MERGE_CATE_CLOSE}></button>
       </div>
     </div>
   </div>
@@ -44,8 +44,8 @@
 
     <table id="abilist" class="table table-striped" cellpadding="0" cellspacing="0">
         <tr class="active">
-			<th style="width: 150px">主類別</th>
-			<th style="width: 100px">功能操作</th>
+			<th style="width: 150px"><{$smarty.const._MERGE_CATE_MAIN_CATE}></th>
+			<th style="width: 100px"><{$smarty.const._MERGE_CATE_OPERATE}></th>
         </tr>
         <{foreach from=$abis item=abi}>
         <tr class="nowrap">
@@ -167,7 +167,7 @@ function collect_inputabis(row_inputs)
 
         if(idx > 0 && -1 == pid && title != '' && '' == prevtitle)
         {  // 新增資料要檢查前一個是否也沒資料
-            alert('上一層類別也要輸入！');
+            alert('<{$smarty.const._MERGE_CATE_WARN_PARENT}>');
             err = true;
             return;
         }
@@ -202,7 +202,7 @@ $(document).on('click', '.updateabi', function(){
         success:function(data){
             if(!data.status)
             {
-                alert('資料更新失敗！');
+                alert('<{$smarty.const._MERGE_CATE_WARN_FAIL_UPDATE}>');
                 alert(data.ret);
                 return;
             }
@@ -255,14 +255,14 @@ function abiHasQuestion(cid)
 //$('.deleteabi').live('click', function(){
 $(document).on('click', '.deleteabi', function(){
     console.log("$('.deleteabi').click");
-    if(!confirm('確定要刪除？'))  return;
+    if(!confirm("<{$smarty.const._MERGE_CATE_WARN_DELETE}>"))  return;
 
     var cid = rowLastCid($(this).parent()  // div
 				.parent()  // td
 				.parent());
     if(abiHasQuestion(cid))
     {
-        alert('該類別還有指派報表！');
+        alert('<{$smarty.const._MERGE_CATE_WARN_CHILD}>');
         return;
     }
     var hidevars = $(hidevarsid + '[cid=' + cid + ']');
@@ -273,7 +273,7 @@ $(document).on('click', '.deleteabi', function(){
         success:function(data){
             if(!data.status)
             {
-                alert('資料庫錯誤！要刪除的類別還有底層類別！');
+                alert("<{$smarty.const._MERGE_CATE_WARN_DB_ERROR}>");
                 return;
             }
             var td = hidevars.parent()  // div
@@ -315,7 +315,7 @@ $(document).on('click', '.clone', function(){
 
     if(td.find(inputid).length > 0)
     {
-        alert('該層類別還未輸入資料，不能以此複製一列！');
+        alert('<{$smarty.const._MERGE_CATE_WARN_COPY}>');
         return;
     }
 
@@ -371,7 +371,7 @@ $('.editabi').click(function(){
             console.log(data);
             if(!data)
             {
-                alert('名稱重複！');
+                alert('<{$smarty.const._MERGE_CATE_WARN_DUPLICATED}>');
                 return;
             }
             $('input[cid=' + cid + ']')  // 更名後，全部一樣 cid 的都要更新

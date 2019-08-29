@@ -91,7 +91,7 @@ $(document).ready(function(){
             type: 'GET',
 	    timeout: 5000,
 	    error: function(data){
-		alert($(that).attr('docname') + '列表失敗');
+		alert($(that).attr('docname') + '<{$smarty.const._MERGE_LIST_FAIL_LIST}>');
 	    },
             success: function(data){
 		var toJson = ctype == 'json';
@@ -181,21 +181,19 @@ $(document).ready(function(){
 <!--<button type="button" class="btn btn-lg title-btn" style="width: 100%">-->
 <{*if isset($smarty.get.wo) && $smarty.get.wo == 'share'*}>
 <{if isset($smarty.get.grpid) && $smarty.get.grpid > 0}>
-    目前部門所在的報表
+    <{$smarty.const._MERGE_LIST_TPL_TITLE_DEPARTMENT}>
 <{else}>
-    全部的報表<{$origuri}>
-    <{$phpfile}>
-    <{$nienzutest}>
+    <{$smarty.const._MERGE_LIST_TPL_TITLE_ALL}>
 <{/if}>
 <span class="badge"><{$total}></span>
 </h3>
 <h5>
-部門類別：
+<{$smarty.const._MERGE_LIST_TPL_DEPARTMENT}>：
 <select class="form-control_dummy" name="grpid">
 <{html_options options=$grpopt selected=$smarty.get.grpid}>
 </select>
 <!-- *************************************** Start of groupby -->
-請點選排序方式：
+<{$smarty.const._MERGE_LIST_TPL_ORDER_BY}>：
 <{foreach from=$orderopt item=orderby name=ord}>
 <a href="<{$origuri}>&grpid=<{$smarty.get.grpid}>&orderby=<{$smarty.foreach.ord.index}>&acce=<{if $acce == 'asc'}>desc<{else}>asc<{/if}>">
     <{$orderby}>
@@ -231,9 +229,9 @@ $(document).ready(function(){
                  alt="Spreadsheet 報表" />
 	<{/if}>
 	<h6>
-	    呼叫次數: <{$data.accesscount}><br />
-	    更新次數: <{$data.upcount}><br />
-	    最後更新時間<br />
+	    <{$smarty.const._MERGE_LIST_CALLED}>: <{$data.accesscount}><br />
+	    <{$smarty.const._MERGE_LIST_UPDATETIMES}>: <{$data.upcount}><br />
+	    <{$smarty.const._MERGE_LIST_LAST_UPDATE}><br />
 	    <{$data.uptime|date_format:"%Y-%m-%d %H:%M"}>
 	</h6>
     </div>
@@ -268,8 +266,8 @@ $(document).ready(function(){
 		   href="file.php?getendpt=<{$oxoolurl}>/lool/merge-to/<{$data.endpt}>/json&ctype=json"
 		   endpt="<{$oxoolurl}>/lool/merge-to/<{$data.endpt}>"
 		   docname="<{$data.title}>" ctype="json"
-		   title="{傳送 JSON 範例說明}">
-			{傳送JSON 範例說明}
+		   title="{<{$smarty.const._MERGE_LIST_JSON_EXAMPLE}>}">
+			{<{$smarty.const._MERGE_LIST_JSON_EXAMPLE}>}
 		</a>
 	    </span>&nbsp;
 	    <span class="text-success">
@@ -278,39 +276,39 @@ $(document).ready(function(){
                    yaml="file.php?getendpt=<{$oxoolurl}>/lool/merge-to/<{$data.endpt}>/yaml&ctype=yaml"
                    endpt="<{$oxoolurl}>/lool/merge-to/<{$data.endpt}>"
                    docname="<{$data.title}>" ctype="api"
-                   title="&lt;YAML 格式說明&gt;">
-                        &lt;YAML 格式說明&gt;
+                   title="&lt;<{$smarty.const._MERGE_LIST_YAML_EXAMPLE}>&gt;">
+                        &lt;<{$smarty.const._MERGE_LIST_YAML_EXAMPLE}>&gt;
 		</a>
 	    </span>&nbsp;
 	    <span class="text-success">
-		<a class="commonlink downfile" title="下載範本"
+		<a class="commonlink downfile" title="<{$smarty.const._MERGE_LIST_DOWNLOAD_TEMP}>"
                    href="file.php?id=<{$data.rec_id}>">
 			<span class="glyphicon glyphicon-download-alt">
 			</span>
-		        下載範本
+		        <{$smarty.const._MERGE_LIST_DOWNLOAD_TEMP}>
 		</a>
 	    </span>&nbsp;
 	    <span class="text-success">
-		<a class="commonlink downfile" title="下載 API 資訊"
+		<a class="commonlink downfile" title="<{$smarty.const._MERGE_LIST_DOWNLOAD_APIINFO}>"
                    href="file.php?id=<{$data.rec_id}>&endpt=<{$oxoolurl}>/lool/merge-to/<{$data.endpt}>">
 			<span class="glyphicon glyphicon-download-alt">
 			</span>
-		        下載 API 資訊
+		        <{$smarty.const._MERGE_LIST_DOWNLOAD_APIINFO}>
 		</a>
 	    </span>&nbsp;
 	    <{if !$data.no_perm || ($data.no_perm && $data.for_admin)}>
 	    <span class="text-success">
-		<a class="commonlink modify" title="修改" href=""
+		<a class="commonlink modify" title="<{$smarty.const._MERGE_LIST_MODIFY}>" href=""
 		   rec_id="<{$data.rec_id}>" cid="<{$data.cid}>">
 			<span class="glyphicon glyphicon-pencil"></span>
-                        修改
+                        <{$smarty.const._MERGE_LIST_MODIFY}>
 		</a>
 	    </span>&nbsp;
 	    <span style="font-color: black; a:color: black;">
-		<a class="deletelink" title="刪除"
+		<a class="deletelink" title="<{$smarty.const._MERGE_LIST_DELETE}>"
 		   href="<{$acturi}>&id=<{$data.rec_id}>&sta=4">
 			<span class="glyphicon glyphicon-trash"></span>
-		        刪除
+		        <{$smarty.const._MERGE_LIST_DELETE}>
 		</a>
 	    </span>&nbsp;
 	    <{/if}>
@@ -320,38 +318,38 @@ $(document).ready(function(){
 		<a class="otherlink assign-perm" href=""
 		   selusers="<{$data.selusers}>"
 		   rec_id="<{$data.rec_id}>"
-		   title="分享給...">
+		   title="<{$smarty.const._MERGE_LIST_SHARE}>">
 		        <span class="glyphicon glyphicon-share"></span>
-			分享給...
+			<{$smarty.const._MERGE_LIST_SHARE}>
 		</a>
 	    </span>&nbsp;
 	    <{/if}>
 	    <{if !$data.no_perm}>
 	    <span class="text-success">
-		<a class="otherlink" title="查看留言"
+		<a class="otherlink" title="<{$smarty.const._MERGE_LIST_CHECK_MESSAGE}>"
 		   href="<{$origuri}>&wo=<{$wo}>&id=<{$data.rec_id}>&start=<{$start}>"
 		   >
 		        <span class="otherlink glyphicon glyphicon-eye-open">
 			</span>
-			查看留言
+			<{$smarty.const._MERGE_LIST_CHECK_MESSAGE}>
 		</a>
 	    </span>
 	    <{/if}>
 	    <{if $data.no_perm || ($data.no_perm && $data.for_admin)}>
 	    <span class="text-success">
-		<a class="otherlink" title="我要留言"
+		<a class="otherlink" title="<{$smarty.const._MERGE_LIST_LEAVE_MESSAGE}>"
 		   href="<{$origuri}>&wo=<{$wo}>&id=<{$data.rec_id}>"
 		   >
                         <span class="glyphicon glyphicon-eye-open"></span>
-			我要留言
+			<{$smarty.const._MERGE_LIST_LEAVE_MESSAGE}>
 		</a>
 	    </span>&nbsp;
 	    <span>
 		<span class="glyphicon glyphicon-user"></span>
                 <{if $data.for_admin}>
-		<{$data.uname}>的報表
+		<{$data.uname}><{$smarty.const._MERGE_LIST_CREATE_BY}>
 		<{else}>
-                <{$data.uname}>分享給我
+                <{$data.uname}><{$smarty.const._MERGE_LIST_CREATE_BY}>
 		<{/if}>
 	    </span>
 	    <{/if}>

@@ -58,8 +58,7 @@ $tpl = $xoopsTpl;
 
 $orderfield = array('cid', 'extname', 'callcount', 'upcount',
                      'uptime', 'uid', 'title');
-$orderopt = array("s"._PM_DELETED, '文件類別', '呼叫次數', '更新次數',
-                     '更新時間', '使用者', '報表名稱');
+$orderopt = array(_MERGE_LIST_ORDER_CATEGORY, _MERGE_LIST_ORDER_DOCUMENT, _MERGE_LIST_ORDER_CALLED, _MERGE_LIST_ORDER_UPDATETIMES, _MERGE_LIST_ORDER_UPDATE, _MERGE_LIST_ORDER_USER, _MERGE_LIST_ORDER_NAME);
 
 $uid = $xoopsUser->uid();
 $permitTb = $db->prefix('merge_user_permit');

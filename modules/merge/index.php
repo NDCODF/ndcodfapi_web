@@ -9,7 +9,6 @@ if(!$xoopsUser)
     exit();
 }
 
-// Load language files
 $moduleName = $xoopsModule->dirname();
 
 $op = (isset($_REQUEST["op"]) && !empty($_REQUEST["op"])) ?

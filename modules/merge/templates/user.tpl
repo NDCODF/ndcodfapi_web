@@ -1,17 +1,17 @@
-<h3>報表遷移</h3>
+<h3><{$smarty.const._MERGE_USER_TRANSFER_OWNERSHIP}></h3>
 
 <form name="form_user" id="form_user" method="post" class="form-inline"
       enctype="multipart/form-data"
       action="<{$origuri}>">
     <div class="row">
 	<div class="col-sm-4">
-	    <h4>部門</h4>
+	    <h4><{$smarty.const._MERGE_USER_DEPARTMENT}></h4>
 	</div>
 	<div class="col-sm-4">
-	    <h4>原擁有報表人員</h4>
+	    <h4><{$smarty.const._MERGE_USER_CURRENT_OWNER}></h4>
 	</div>
 	<div class="col-sm-4">
-	    <h4>新擁有報表人員</h4>
+	    <h4><{$smarty.const._MERGE_USER_NEW_OWNER}></h4>
 	</div>
     </div>
     <div class="row">
@@ -34,7 +34,7 @@
 	<div class="col-sm-4"></div>
 	<div class="col-sm-4"></div>
 	<div class="col-sm-4 right">
-	    <input type="submit" class="btn btn-info btn-lg" value="更新">
+	    <input type="submit" class="btn btn-info btn-lg" value="<{$smarty.const._MERGE_USER_UPDATE}>">
 	</div>
     </div>
 </form>
@@ -70,12 +70,12 @@ $(document).ready(function(){
 	var b = $('select[name=newuser]').val();
 	if (a == '' || b == '')
 	{
-	    alert('未選報表人員');
+	    alert('<{$smarty.const._MERGE_USER_WARN_NO_SELECT}>');
 	    return false;
 	}
 	if (a - b == 0)
 	{
-	    alert('原擁有報表人員與新擁有報表人員不能同一人');
+	    alert('<{$smarty.const._MERGE_USER_WARN_CONFLICT}>');
 	    return false;
 	}
 	return true;

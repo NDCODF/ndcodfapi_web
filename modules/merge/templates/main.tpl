@@ -1,4 +1,4 @@
-<{if !$modify}><h3>新增範本</h3><{/if}>
+<{if !$modify}><h3><{$smarty.const._MERGE_MAIN_TITLE}></h3><{/if}>
 <{* modify: call from list.tpl *}>
 <script>
 $(document).ready(function(){
@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 	<{if !$modify}>
 	if (typeof(uploadFile)=='undefined' || uploadFile == '')
-	    msg.push('未上傳檔案');
+	    msg.push('<{$smarty.const._MERGE_MAIN_FILE_WARN}>');
 	<{/if}>
 
     <{if $modify}>
@@ -19,16 +19,16 @@ $(document).ready(function(){
     <{/if}>
         if (!uploadFile.match(/\.ott|\.ots$/i))
 	{
-	    msg.push('上傳檔案類型不是 .ott 或 .ots');
+	    msg.push("<{$smarty.const._MERGE_MAIN_TYPE_WARN}>");
 	}
     <{if $modify}>
 	}
     <{/if}>
 
 	if ($('select[name=cid]').find(":selected").val() == 0)
-	    msg.push('未選分類');
+	    msg.push('<{$smarty.const._MERGE_MAIN_CATEGORY_WARN}>');
 	if ($('input[name=title]').val() == '')
-	    msg.push('未填抬頭');
+	    msg.push('<{$smarty.const._MERGE_MAIN_NAME_WARN}>');
 
 	if (msg.length > 0)
 	{
@@ -45,7 +45,7 @@ $(document).ready(function(){
     <table class="table table-bordered">
 	<tr>
 	    <th class="active">
-		範本 API 名稱
+		<{$smarty.const._MERGE_MAIN_API_NAME}>
 		<{if !$modify}><em>*</em><{/if}>
 	    </th>
 	    <td class="input-column">
@@ -54,7 +54,7 @@ $(document).ready(function(){
 	</tr>
 	<tr>
 	    <th class="active">
-		API 範本說明 
+		<{$smarty.const._MERGE_MAIN_API_DESC}>
 	    </th>
 	    <td class="input-column">
 		<textarea class="form-control" type="textarea"
@@ -63,7 +63,7 @@ $(document).ready(function(){
 	</tr>
 	<tr>
 	    <th class="active">
-		分類
+	    <{$smarty.const._MERGE_MAIN_CATEGORY}>
 		*
 	    </th>
 	    <td class="input-column">
@@ -75,21 +75,21 @@ $(document).ready(function(){
 	<{if $modify}>
 	<tr>
 	    <th class="active">
-		顯示
+		<{$smarty.const._MERGE_MAIN_SHOW_CHECK}>
 		*
 	    </th>
 	    <td class="input-column">
-		<input type="radio" name="hide" value="0" checked="checked">顯示
-		<input type="radio" name="hide" value="1">隱藏
+		<input type="radio" name="hide" value="0" checked="checked"><{$smarty.const._MERGE_MAIN_SHOW}>
+		<input type="radio" name="hide" value="1"><{$smarty.const._MERGE_MAIN_HIDE}>
 	    </td>
 	</tr>
 	<{/if}>
 	<tr>
 	    <th class="active">
 		<{if !$modify}>
-		上傳
+		<{$smarty.const._MERGE_MAIN_UPLOAD}>
 		<{else}>
-		更新範本檔
+		<{$smarty.const._MERGE_MAIN_UPDATE}>
 		<{/if}>
 		<{if !$modify}><em>*</em><{/if}>
 	    </th>
@@ -108,7 +108,7 @@ $(document).ready(function(){
 		<{if $modify}>
 		<button type="button" class="btn btn-info"
 			data-dismiss="modal">
-			關閉
+			<{$smarty.const._MERGE_MAIN_CLOSE}>
 		</button>
 		<{/if}>
 	    </td>

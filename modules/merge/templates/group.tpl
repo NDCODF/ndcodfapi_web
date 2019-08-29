@@ -1,4 +1,4 @@
-<h3>部門分派</h3>
+<h3><{$smarty.const._MERGE_GROUP_DEPART_ASSIGN}></h3>
 
 <form name="form_user" id="form_user" method="post" class="form-inline"
       enctype="multipart/form-data"
@@ -8,7 +8,7 @@
 	    <h4>部門</h4>
 	</div>
 	<div class="col-sm-4">
-	    <h4><span id="subtitle"></span>可看到的部門列表</h4>
+	    <h4><span id="subtitle"></span><{$smarty.const._MERGE_GROUP_DEPART}></h4>
 	</div>
     </div>
     <div class="row">
@@ -25,7 +25,7 @@
     <div class="row">
 	<div class="col-sm-4"></div>
 	<div class="col-sm-4 right">
-	    <input type="submit" class="btn btn-info btn-lg" value="更新">
+	    <input type="submit" class="btn btn-info btn-lg" value="<{$smarty.const._MERGE_GROUP_UPDATE}>">
 	</div>
     </div>
 </form>

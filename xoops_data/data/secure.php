@@ -33,11 +33,11 @@ define('XOOPS_DB_HOST', 'localhost');
 
 // Database Username
 // Your database user account on the host
-define('XOOPS_DB_USER', 'root');
+define('XOOPS_DB_USER', '');
 
 // Database Password
 // Password for your database user account
-define('XOOPS_DB_PASS', 'ossii2018');
+define('XOOPS_DB_PASS', '');
 
 // Database Name
 // The name of database on the host. The installer will attempt to create the database if not exist
