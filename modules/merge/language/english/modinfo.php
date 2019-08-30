@@ -21,6 +21,7 @@ define("_MI_MERGE_PREFERENCE_PAGENAV", "Entry Per Page");
 
 // Landing Page nav-bar (Efect themes/odfapi/tpl/nav-menu.tpl)
 define("_THEME_MERGE_MI_MANAGE", "Manage Report");
+define("_THEME_MERGE_MI_ADDNEWCATE", "Add New Category");
 define("_THEME_MERGE_MI_CATE", "Manage Category");
 define("_THEME_MERGE_MI_GROUP", "Cross-department report viewing permissions");
 define("_THEME_MERGE_MI_TRANSFORM_OWNER", "Transfer Report");
