@@ -20,17 +20,17 @@ define("_MERGE_MI_SAMPLE_WINDOWS", "Windows Sample");
 define("_MI_MERGE_PREFERENCE_PAGENAV", "Entry Per Page");
 
 // Landing Page nav-bar (Efect themes/odfapi/tpl/nav-menu.tpl)
-define("_THEME_MERGE_MI_MANAGE", "報表管理");
-define("_THEME_MERGE_MI_CATE", "類別管理");
-define("_THEME_MERGE_MI_GROUP", "跨部門報表閱覽權限");
-define("_THEME_MERGE_MI_TRANSFORM_OWNER", "報表轉移");
-define("_THEME_MERGE_MI_UPLOAD", "新增範本");
-define("_THEME_MERGE_MI_LIST", "我的報表");
-define("_THEME_MERGE_MI_MYPROFILE", "我的資料");
-define("_THEME_MERGE_MI_EDIT_PROFILE", "管理個人資料");
-define("_THEME_MERGE_MI_LOGOUT", "登出");
-define("_THEME_MERGE_MI_GOTO_BACKEND", "後臺管理");
-define("_THEME_MERGE_MI_SEARCH_HINT", "搜尋報表");
+define("_THEME_MERGE_MI_MANAGE", "Manage Report");
+define("_THEME_MERGE_MI_CATE", "Manage Category");
+define("_THEME_MERGE_MI_GROUP", "Cross-department report viewing permissions");
+define("_THEME_MERGE_MI_TRANSFORM_OWNER", "Transfer Report");
+define("_THEME_MERGE_MI_UPLOAD", "Upload Template");
+define("_THEME_MERGE_MI_LIST", "My Report");
+define("_THEME_MERGE_MI_MYPROFILE", "My Profile");
+define("_THEME_MERGE_MI_EDIT_PROFILE", "Edit Profile");
+define("_THEME_MERGE_MI_LOGOUT", "Logout");
+define("_THEME_MERGE_MI_GOTO_BACKEND", "Administration");
+define("_THEME_MERGE_MI_SEARCH_HINT", "Search Report");
 
 define("_MI_ADMIN_SITEICON", "Update website image");
 //define for templates
