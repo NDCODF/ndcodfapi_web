@@ -20,6 +20,7 @@ if (!isset($_GET['id']) && !isset($_GET['sta']))
     exit();
 }
 
+include_once('include/odfapi-utils.php');
 $db = $xoopsDB;
 
 $uid = $xoopsUser->uid();
@@ -35,6 +36,9 @@ if ($_GET['sta'] == 4)   // 刪除紀錄並刪除檔案   sta=4
     $sql = sprintf("DELETE FROM %s WHERE rec_id='%d' ",
             $tbl, $_GET['id']);
     $db->queryF($sql) or die($db->error());
+    
+    generateTemplateInfo2JSON();
+
     @unlink($delfilename);
     redirect_header("index.php?op=operate&subop=list", 2, 'ok');
 }

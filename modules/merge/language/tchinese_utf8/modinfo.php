@@ -21,8 +21,7 @@ define("_MI_MERGE_PREFERENCE_PAGENAV", "列表分頁數量");
 
 // Landing Page nav-bar (Efect themes/odfapi/tpl/nav-menu.tpl)
 define("_THEME_MERGE_MI_MANAGE", "報表管理");
-define("_THEME_MERGE_MI_ADDNEWCATE", "新增類別");
-define("_THEME_MERGE_MI_CATE", "類別管理");
+define("_THEME_MERGE_MI_CATE_MANAGE", "類別管理");
 define("_THEME_MERGE_MI_GROUP", "跨部門報表閱覽權限");
 define("_THEME_MERGE_MI_TRANSFORM_OWNER", "報表轉移");
 define("_THEME_MERGE_MI_UPLOAD", "新增範本");
@@ -32,6 +31,14 @@ define("_THEME_MERGE_MI_EDIT_PROFILE", "管理個人資料");
 define("_THEME_MERGE_MI_LOGOUT", "登出");
 define("_THEME_MERGE_MI_GOTO_BACKEND", "後臺管理");
 define("_THEME_MERGE_MI_SEARCH_HINT", "搜尋報表");
+
+define("_THEME_REPO_MI_MANAGE", "機關範本管理");
+define("_THEME_REPO_MI_ADDNEWCATE", "新增類別");
+define("_THEME_REPO_MI_CATE", "類別管理");
+define("_THEME_REPO_MI_GROUP", "跨部門報表閱覽權限");
+define("_THEME_REPO_MI_TRANSFORM_OWNER", "報表轉移");
+define("_THEME_REPO_MI_UPLOAD", "新增範本");
+define("_THEME_REPO_MI_LIST", "我的機關範本");
 
 define("_MI_ADMIN_SITEICON", "更新網站圖示");
 //define for templates

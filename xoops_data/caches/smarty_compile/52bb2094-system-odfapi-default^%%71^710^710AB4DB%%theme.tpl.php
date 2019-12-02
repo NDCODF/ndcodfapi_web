@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.30, created on 2018-12-13 03:49:57
+<?php /* Smarty version 2.6.30, created on 2018-12-16 05:40:08
          compiled from /var/www/html/odfapi/modules/system/themes/transition/theme.tpl */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->_tpl_vars['xoops_langcode']; ?>

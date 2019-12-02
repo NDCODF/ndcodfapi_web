@@ -19,6 +19,7 @@ include_once ('include/common.inc.php');
 include_once ('include/cate/ability.class.php');
 include_once ('include/cate/category.class.php');
 include_once('include/documents.class.php');
+include_once('include/odfapi-utils.php');
 
 /*
  * generate uuid using mysql function
@@ -82,6 +83,43 @@ function uploadFile(&$db, &$cnf, $tbl, $id)
     return '';
 }
 
+/*
+ * Check filename & autoincrement
+ *
+ * @param str original docname
+ * return str new docname
+ */
+function checkDocname($docname, $cid, $extname)
+{
+    global $xoopsDB;
+
+    $sql_docname_same = "SELECT Count(docname) from ndcodfapi.ndc_merge_user_templates where docname = '{$docname}' and cid = {$cid} and extname = '{$extname}'";
+    $rs_docname  = $xoopsDB->queryF($sql_docname_same);
+    $obj = 0;
+    while($rows = $xoopsDB->fetchRow($rs_docname))
+    {
+        $obj = (int)$rows[0];
+    };
+    if ($obj == 0)
+    {
+        return $docname;
+    }
+    $sql_docname_autonew = "SELECT Count(docname) from ndcodfapi.ndc_merge_user_templates where docname like '{$docname}_(%)' and cid = {$cid} and extname = '{$extname}'";
+    $rs_docname  = $xoopsDB->queryF($sql_docname_autonew);
+    $obj = 0;
+    while($rows = $xoopsDB->fetchRow($rs_docname))
+    {
+        $obj = (int)$rows[0];
+    };
+    $obj += 1;
+    $docname = "{$docname}_({$obj})";
+    return $docname;
+}
+
+function write2file($data)
+{
+    file_put_contents('/usr/share/NDCODFAPI/ODFReport/templates/data.json', json_encode($data));
+}
 
 $user = $xoopsUser;
 $db = $xoopsDB;
@@ -104,6 +142,7 @@ if (isset($_POST['wo']) && 'upload' == $_POST['wo'])
             list($ext, $docname) = getUpFileInfo();
             $uid = $xoopsUser->uid();
 
+            $docname = checkDocname($docname, intval($_POST['cid']), $ext);
             $doc = new Documents;
             $doc->set('uid', $uid);
             $doc->set('cid', intval($_POST['cid']));
@@ -114,6 +153,7 @@ if (isset($_POST['wo']) && 'upload' == $_POST['wo'])
             $doc->set('endpt', $uuid);
             $doc->update();
 
+            generateTemplateInfo2JSON();
             redirect_header('index.php?op=operate&subop=list',
                             2, 'OK');
             exit();
@@ -129,16 +169,16 @@ if (isset($_POST['wo']) && 'upload' == $_POST['wo'])
     {
         $id = intval($_POST['id']);
 
-        $doc = new Documents($id);
-        $doc->set('cid', intval($_POST['cid']));
-        $doc->set('title', $_POST['title']);
-        $doc->set('desc', $_POST['desc']);
-        $doc->set('upcount', $doc->get('upcount') + 1);  // 更新次數
-        $doc->set('hide', $_POST['hide']);
-        $doc->update();
 
         if (0 == $_FILES['uploadFile']['error'])
         {
+            $doc = new Documents($id);
+            $doc->set('cid', intval($_POST['cid']));
+            $doc->set('title', $_POST['title']);
+            $doc->set('desc', $_POST['desc']);
+            $doc->set('upcount', $doc->get('upcount') + 1);  // 更新次數
+            $doc->set('hide', $_POST['hide']);
+            $doc->update();
             $isNew = false;
             $uuid = uploadFile($db, $cnf, $tbl, $id);
             if (empty($uuid))
@@ -158,12 +198,32 @@ if (isset($_POST['wo']) && 'upload' == $_POST['wo'])
             if ($oldext != $ext)
                 @unlink("{$cnf['doctemplatedir']}/{$uuid}.{$oldext}");
 
+            $docname = checkDocname($docname, intval($_POST['cid']), $ext);
             $doc = new Documents($id);
             $doc->set('extname', $ext);
             $doc->set('docname', $docname);
             $doc->update();
         }
+        else
+        {
+            $doc = new Documents($id);
+            $doc->set('cid', intval($_POST['cid']));
+            $doc->set('title', $_POST['title']);
+            $doc->set('desc', $_POST['desc']);
+            $doc->set('upcount', $doc->get('upcount') + 1);  // 更新次數
+            $doc->set('hide', $_POST['hide']);
+            $docname = $doc->get("docname");
 
+            // Get the original docname
+            $origDocname = explode("_(", $docname)[0];
+            $cid = $doc->get("cid");
+            $ext = $doc->get("extname");
+            $docname = checkDocname($origDocname, $cid, $ext);
+            $doc->set("docname", $docname);
+            $doc->update();
+        }
+
+        generateTemplateInfo2JSON();
         redirect_header('index.php?op=operate&subop=list', 2, 'OK');
         exit();
     }

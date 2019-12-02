@@ -24,6 +24,7 @@ include_once ('include/cate/ability.class.php');
 include_once ('include/cate/category.class.php');
 include_once ('include/documents.class.php');
 include_once ('include/group.class.php');
+include_once('include/odfapi-utils.php');
 
 
 /*
@@ -51,8 +52,10 @@ function getAccessCount($endpt)
     $jobj = json_decode($response);
     return $jobj->call_time;
 }
-
-
+if (file_exists("/usr/share/NDCODFAPI/ODFReport/templates/myfile.json") == False)
+{
+    generateTemplateInfo2JSON();
+}
 $db = $xoopsDB;
 $tpl = $xoopsTpl;
 

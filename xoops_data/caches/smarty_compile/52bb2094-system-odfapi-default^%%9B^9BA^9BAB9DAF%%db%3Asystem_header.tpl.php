@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.30, created on 2018-12-13 03:49:57
+<?php /* Smarty version 2.6.30, created on 2018-12-16 05:40:08
          compiled from db:system_header.tpl */ ?>
 <ul id="xo-breadcrumb" class="ui-corner-all" style="background-image:url('<?php 
 echo 'http://122.116.99.182:8888/odfapi/modules/system/images/breadcrumb/default/bc_bg.png'; ?>'); ">

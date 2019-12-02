@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.30, created on 2018-12-13 03:50:03
+<?php /* Smarty version 2.6.30, created on 2018-12-16 05:40:08
          compiled from db:system_preferences.tpl */ ?>
 <?php if ($this->_tpl_vars['breadcrumb']): ?>
     <?php $this->_smarty_include(array('smarty_include_tpl_file' => "db:system_header.tpl", 'smarty_include_vars' => array()));

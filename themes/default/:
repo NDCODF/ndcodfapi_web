@@ -1,0 +1,47 @@
+    <div class="navbar navbar-inverse global-nav">
+        <div class="container">
+            <div class="navbar-header">
+                <button data-target="#main-navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="<{$xoops_url}>" class="navbar-brand xlogo" title="<{$xoops_sitename}>">
+                    <img src="<{$xoops_imageurl}>images/logo.png" alt="<{$xoops_sitename}>" style="height:42px;">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse"  id="main-navbar-collapse">
+		<{if $xoops_isuser|default:false}>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;">報表管理<b class="caret"></b></a>
+                        <ul id="xswatch-account-menu" class="dropdown-menu">
+                            <li><a href="<{$xoops_url}>/user.php"><{$smarty.const.THEME_ACCOUNT_EDIT}></a></li>
+                            <li><a href="<{$xoops_url}>/viewpmsg.php"><{$smarty.const.THEME_ACCOUNT_MESSAGES}> <span class="badge"><{xoInboxCount}></span></a></li>
+                            <li><a href="<{$xoops_url}>/notifications.php"><{$smarty.const.THEME_ACCOUNT_NOTIFICATIONS}></a></li>
+                        </ul>
+                    </li>
+                    <!-- begin custom menus - customize these for your system -->
+                    <li><a href="javascript:;">範例</a></li>
+                    <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;"><{$smarty.const.THEME_MODULE2}><b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:;">php api 範例</a></li>
+                            <li><a href="javascript:;">php json 範例</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="<{$xoops_url}>/modules/newbb"><{$smarty.const.THEME_MODULE3}></a></li>
+                    <li><a href="<{$xoops_url}>/user.php?op=logout" title="登出"><span class="glyphicon glyphicon-log-out"></span> 登出</a></li>
+                    <!-- end custom menus -->
+                </ul>
+                <{if $xoops_search|default:false}>
+                <form class="navbar-form navbar-right" role="search" action="<{xoAppUrl search.php}>" method="get">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="<{$smarty.const.THEME_SEARCH_TEXT}>" name="query">
+                        <span class="input-group-btn"><button type="submit" class="btn btn-default" aria-label="<{$smarty.const.THEME_SEARCH_TEXT}>">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button></span>
+                    </div>
+                    <input type="hidden" name="action" value="results">
+                </form>
+                <{/if}>
+            </div>
+        </div>
+    </div>

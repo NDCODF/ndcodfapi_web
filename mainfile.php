@@ -19,13 +19,13 @@ if (!defined('XOOPS_MAINFILE_INCLUDED')) {
     // XOOPS Physical Paths
 
     // Physical path to the XOOPS documents (served) directory WITHOUT trailing slash
-    define('XOOPS_ROOT_PATH', '/var/www/html/ndcodfapi_web');
+    define('XOOPS_ROOT_PATH', '/var/www/html/odfapi');
 
     // For forward compatibility
     // Physical path to the XOOPS library directory WITHOUT trailing slash
-    define('XOOPS_PATH', '/var/www/html/ndcodfapi_web/xoops_lib');
+    define('XOOPS_PATH', '/var/www/html/odfapi/xoops_lib');
     // Physical path to the XOOPS datafiles (writable) directory WITHOUT trailing slash
-    define('XOOPS_VAR_PATH', '/var/www/html/ndcodfapi_web/xoops_data');
+    define('XOOPS_VAR_PATH', '/var/www/html/odfapi/xoops_data');
     // Alias of XOOPS_PATH, for compatibility, temporary solution
     define('XOOPS_TRUST_PATH', XOOPS_PATH);
 
@@ -38,9 +38,9 @@ if (!defined('XOOPS_MAINFILE_INCLUDED')) {
 
     // XOOPS Virtual Path (URL)
     // Virtual path to your main XOOPS directory WITHOUT trailing slash
-    // Example: define('XOOPS_URL', 'http://223.200.155.14/ndcodfapi_web');
-    // define('XOOPS_URL', 'http://122.116.99.182:8888/ndcodfapi_web');
-    define('XOOPS_URL', XOOPS_PROT.'192.168.3.11/ndcodfapi_web');
+    // Example: define('XOOPS_URL', 'http://223.200.155.14/odfapi');
+    // define('XOOPS_URL', 'http://122.116.99.182:8888/odfapi');
+    define('XOOPS_URL', XOOPS_PROT.'127.0.0.1/odfapi');
 
     // XOOPS Cookie Domain to specify when creating cookies. May be blank (i.e. for IP address host),
     // full host from XOOPS_URL (i.e. www.example.com) or just the registered domain (i.e. example.com)

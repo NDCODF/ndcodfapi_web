@@ -21,10 +21,9 @@ define("_MI_MERGE_PREFERENCE_PAGENAV", "Entry Per Page");
 
 // Landing Page nav-bar (Efect themes/odfapi/tpl/nav-menu.tpl)
 define("_THEME_MERGE_MI_MANAGE", "Manage Report");
-define("_THEME_MERGE_MI_ADDNEWCATE", "Add New Category");
-define("_THEME_MERGE_MI_CATE", "Manage Category");
+define("_THEME_MERGE_MI_CATE_MANAGE", "Manage Category");
 define("_THEME_MERGE_MI_GROUP", "Cross-department report viewing permissions");
-define("_THEME_MERGE_MI_TRANSFORM_OWNER", "Transfer Report");
+define("_THEME_MERGE_MI_TRANSFORM_OWNER", "Transfer Ownership");
 define("_THEME_MERGE_MI_UPLOAD", "Upload Template");
 define("_THEME_MERGE_MI_LIST", "My Report");
 define("_THEME_MERGE_MI_MYPROFILE", "My Profile");
@@ -32,6 +31,14 @@ define("_THEME_MERGE_MI_EDIT_PROFILE", "Edit Profile");
 define("_THEME_MERGE_MI_LOGOUT", "Logout");
 define("_THEME_MERGE_MI_GOTO_BACKEND", "Administration");
 define("_THEME_MERGE_MI_SEARCH_HINT", "Search Report");
+
+define("_THEME_REPO_MI_MANAGE", "Manage Organ Template");
+define("_THEME_REPO_MI_ADDNEWCATE", "Add New Category");
+define("_THEME_REPO_MI_CATE", "Manage Category");
+define("_THEME_REPO_MI_GROUP", "Cross-department report viewing permissions");
+define("_THEME_REPO_MI_TRANSFORM_OWNER", "Transfer Report");
+define("_THEME_REPO_MI_UPLOAD", "Upload Template");
+define("_THEME_REPO_MI_LIST", "My Organ Template");
 
 define("_MI_ADMIN_SITEICON", "Update website image");
 //define for templates

@@ -11,10 +11,13 @@ if(!$xoopsUser)
 
 $moduleName = $xoopsModule->dirname();
 
+/*
+ * start page decide here
+ */
 $op = (isset($_REQUEST["op"]) && !empty($_REQUEST["op"])) ?
             trim($_REQUEST["op"]) : "operate";
 $subop = (isset($_REQUEST["subop"]) && !empty($_REQUEST["subop"])) ?
-            trim($_REQUEST["subop"]) : "list";
+            trim($_REQUEST["subop"]) : "landing";
 $origuri = htmlentities($_SERVER['PHP_SELF']) . "?op={$op}&subop={$subop}";
 
 $phpfile = "./".$op.".php";

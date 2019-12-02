@@ -6,16 +6,16 @@
       </div>
       <div class="modal-body" style="padding: 0px;">
 	<h6>
-        <{$_MERGE_LIST_CONFIRM_DELETE}>
+        <{$smarty.const._MERGE_DIALOG_CONFIRM_DELETE}>
 	</h6>
       </div>
       <div class="modal-footer">
 	<button type="button" data-dismiss="modal"
 		class="btn btn-primary btn-xs" id="delete">
-	    <{$_MERGE_LIST_FAIL_DELETE_YES}>
+	    <{$smarty.const._MERGE_DIALOG_FAIL_DELETE_YES}>
 	</button>
 	<button type="button" data-dismiss="modal" class="btn btn-xs">
-	    <{$_MERGE_LIST_FAIL_DELETE_CANCEL}>
+	    <{$smarty.const._MERGE_DIALOG_FAIL_DELETE_CANCEL}>
 	</button>
       </div>
     </div><!-- /.modal-content -->
@@ -36,30 +36,30 @@
       <div class="modal-body" style="padding: 0px;">
 
       <div class="input-group">
-	<span class="input-group-addon"><{$_MERGE_DIALOG_API_NAME}></span>
+	<span class="input-group-addon"><{$smarty.const._MERGE_DIALOG_API_NAME}></span>
 	<input class="form-control docname" type="text" readonly
 	       placeholder="由列表選擇 api 或 json 以顯示文件名" />
       </div>
       <div class="input-group">
-	<span class="input-group-addon"><{$_MERGE_DIALOG_API_URL}></span>
+	<span class="input-group-addon"><{$smarty.const._MERGE_DIALOG_API_URL}></span>
 	<input class="form-control oxoolurl" type="text" readonly
 	       placeholder="由列表選擇 api 或 json 以顯示 REST 位置" />
 	<span class="input-group-addon">
 	    <a href="#" class="glyphicon glyphicon-copy copylink"
 	       data-placement="auto top" data-toggle="popover"
-	       title="<{$_MERGE_DIALOG_ALTER_COPY}>"></a>
+	       title="<{$smarty.const._MERGE_DIALOG_ALTER_COPY}>"></a>
 	</span>
       </div>
       <br />
 
       <div style="display: flex">
 	<div style="width: 50%;">
-	    <span class="badge"><{$_MERGE_DIALOG_YAML_EXPLAIN}></span>
+	    <span class="badge"><{$smarty.const._MERGE_DIALOG_YAML_EXPLAIN}></span>
 	    <div class="input-group">
 		<textarea class="form-control yamlcontent" rows="20">
 		</textarea>
 		<span class="input-group-addon">
-		    <a href="#" title="<{$_MERGE_DIALOG_ALTER_COPY}>"
+		    <a href="#" title="<{$smarty.const._MERGE_DIALOG_ALTER_COPY}>"
 		       class="glyphicon glyphicon-copy copylink"
 		       data-placement="auto top"
 		       data-toggle="popover"></a>
@@ -67,12 +67,12 @@
 	    </div>
 	</div>
 	<div style="width: 50%;">
-	    <span class="badge"><{$_MERGE_DIALOG_JSON_EXPLAIN}></span>
+	    <span class="badge"><{$smarty.const._MERGE_DIALOG_JSON_EXPLAIN}></span>
 	    <div class="input-group">
 		<textarea class="form-control jsoncontent" rows="20">
 		</textarea>
 		<span class="input-group-addon">
-		    <a href="#" title="<{$_MERGE_DIALOG_ALTER_COPY}>"
+		    <a href="#" title="<{$smarty.const._MERGE_DIALOG_ALTER_COPY}>"
 		       class="glyphicon glyphicon-copy copylink"
 		       data-placement="auto top" data-toggle="popover">
 		    </a>
@@ -84,7 +84,7 @@
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-info" data-dismiss="modal">
-	    <{$_MERGE_DIALOG_CLOSE}>
+	    <{$smarty.const._MERGE_DIALOG_CLOSE}>
 	</button>
     </div>
     </div><!-- /.modal-content -->
@@ -105,32 +105,32 @@
       <div class="modal-body" style="padding: 0px;">
 
       <div class="input-group">
-	<span class="input-group-addon"><{$_MERGE_DIALOG_API_NAME}></span>
+	<span class="input-group-addon"><{$smarty.const._MERGE_DIALOG_API_NAME}></span>
 	<input class="form-control docname" type="text"
 	       placeholder="由列表選擇 api 或 json 以顯示文件名" readonly />
       </div>
       <div class="input-group">
-	<span class="input-group-addon"><{$_MERGE_DIALOG_API_URL}></span>
+	<span class="input-group-addon"><{$smarty.const._MERGE_DIALOG_API_URL}></span>
 	<input class="form-control oxoolurl" type="text" readonly
 	       placeholder="由列表選擇 api 或 json 以顯示 REST 位置" />
 	<span class="input-group-addon">
 	    <a href="#" class="glyphicon glyphicon-copy copylink"
 	       data-placement="auto top" data-toggle="popover"
-	       title="<{$_MERGE_DIALOG_ALTER_COPY}>"></a>
+	       title="<{$smarty.const._MERGE_DIALOG_ALTER_COPY}>"></a>
 	</span>
       </div>
       <br />
 
       <div id="jsonheader" class="alert alert-info"></div>
       <div style="width: 100%">
-	<span class="badge"><{$_MERGE_DIALOG_JSON_EXAMPLE}></span>
+	<span class="badge"><{$smarty.const._MERGE_DIALOG_JSON_EXAMPLE}></span>
 	<div class="input-group">
 	    <textarea class="form-control jsoncontent" rows="15">
 	    </textarea>
 	    <span class="input-group-addon">
 		<a href="#" class="glyphicon glyphicon-copy copylink"
 		   data-placement="auto top" data-toggle="popover"
-		   title="<{$_MERGE_DIALOG_ALTER_COPY}>"></a>
+		   title="<{$smarty.const._MERGE_DIALOG_ALTER_COPY}>"></a>
 	    </span>
 	</div>
       </div>
@@ -138,7 +138,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-info" data-dismiss="modal">
-	    <{$_MERGE_DIALOG_CLOSE}>
+	    <{$smarty.const._MERGE_DIALOG_CLOSE}>
 	</button>
       </div>
     </div><!-- /.modal-content -->
@@ -150,7 +150,7 @@
   <div class="modal-dialog modal-lg" style="width: 20%">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">&nbsp;<{$_MERGE_DIALOG_SHARE}></h4>
+        <h4 class="modal-title">&nbsp;<{$smarty.const._MERGE_DIALOG_SHARE}></h4>
       </div>
       <div class="modal-body" style="padding: 0px;">
 	  <form method="post" action="index.php?op=operate&subop=perm">
@@ -166,7 +166,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-info" data-dismiss="modal">
-	    <{$_MERGE_DIALOG_CLOSE}>
+	    <{$smarty.const._MERGE_DIALOG_CLOSE}>
 	</button>
       </div>
     </div><!-- /.modal-content -->
@@ -178,7 +178,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">&nbsp;<{$_MERGE_DIALOG_MODIFY_DATA}></h4>
+        <h4 class="modal-title">&nbsp;<{$smarty.const._MERGE_DIALOG_MODIFY_DATA}></h4>
       </div>
       <div class="modal-body" style="padding: 0px;">
       <{includeq file="db:main.tpl" modify=true}>

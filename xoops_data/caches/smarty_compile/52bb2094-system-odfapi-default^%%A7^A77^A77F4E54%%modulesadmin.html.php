@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.30, created on 2018-12-13 03:50:01
+<?php /* Smarty version 2.6.30, created on 2018-12-21 08:24:15
          compiled from /var/www/html/odfapi/modules/system/language/tchinese_utf8/help/modulesadmin.html */ ?>
 <div id="help-template" class="outer">
 <h1 class="head">協助主題：模組</h1>

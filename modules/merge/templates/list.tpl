@@ -221,11 +221,11 @@ $(document).ready(function(){
 <div class="row" style="background: <{cycle values="#F4F4F4, white"}>; padding-top: 8px;">
     <div class="col-sm-2 center text-nowrap">
 	<{if $data.extname == 'ott'}>
-	    <img src="images/libreoffice-writer-icon-48.png"
+	    <img src="images/LO_Writer.png"
                  alt="Text 報表" />
 	<{/if}>
 	<{if $data.extname == 'ots'}>
-	    <img src="images/libreoffice-calc-icon-48.png"
+	    <img src="images/LO_Calc.png"
                  alt="Spreadsheet 報表" />
 	<{/if}>
 	<h6>

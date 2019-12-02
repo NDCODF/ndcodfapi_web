@@ -101,3 +101,104 @@ define('_MERGE_DIALOG_MODIFY_DATA', 'Modify data');
 define('_MERGE_DIALOG_SHARE', 'Share with...');
 define('_MERGE_DIALOG_YAML_EXAMPLE', 'YAML example');
 define('_MERGE_DIALOG_JSON_EXAMPLE', 'Json example');
+
+
+// Sort by
+define('_REPO_LIST_ORDER_CATEGORY', 'Template classification');
+define('_REPO_LIST_ORDER_DOCUMENT', 'Document category');
+define('_REPO_LIST_ORDER_CALLED', 'Called frequency');
+define('_REPO_LIST_ORDER_UPDATETIMES', 'Update frequency');
+define('_REPO_LIST_ORDER_UPDATE', 'Update time');
+define('_REPO_LIST_ORDER_USER', 'User');
+define('_REPO_LIST_ORDER_NAME', 'Report name');
+
+//list.php -> user.tpl
+define('_REPO_USER_TRANSFER_OWNERSHIP', 'Transfer Report');
+define('_REPO_USER_DEPARTMENT', 'Department');
+define('_REPO_USER_CURRENT_OWNER', 'Current owner');
+define('_REPO_USER_NEW_OWNER', 'New owner');
+define('_REPO_USER_UPDATE', 'Update');
+define('_REPO_USER_WARN_NO_SELECT', 'No selected owner');
+define('_REPO_USER_WARN_CONFLICT', 'Current owner can not be new owner');
+
+
+
+//list.php -> group.tpl
+define('_REPO_GROUP_DEPART_ASSIGN', 'Assign department');
+define('_REPO_GROUP_DEPART', 'Department');
+define('_REPO_GROUP_ALLOW_DISPLAY', 'Displayed department list');
+define('_REPO_GROUP_UPDATE', 'Update');
+
+
+
+//list.php -> cate.tpl
+define('_REPO_CATE_TITLE', 'Add category');
+define('_REPO_CATE_CHANGEPAGE_TITLE', 'Change category name');
+define('_REPO_CATE_RENAME', 'Rename');
+define('_REPO_CATE_CLOSE', 'Close');
+define('_REPO_CATE_MAIN_CATE', 'Main category');
+define('_REPO_CATE_OPERATE', 'Action');
+define('_REPO_CATE_WARN_PARENT', 'Required upper level category');
+define('_REPO_CATE_WARN_FAIL_UPDATE', 'Fail to update data');
+define('_REPO_CATE_WARN_DELETE', 'Are you sure you want to delete?');
+define('_REPO_CATE_WARN_CHILD', 'There are assignment reports in this category!');
+define('_REPO_CATE_WARN_DB_ERROR', 'Databse error! There are lower category under what you want to delete ones!');
+define('_REPO_CATE_WARN_COPY', 'No date in that category, so you can not copy another columns!');
+define('_REPO_CATE_WARN_DUPLICATED', 'Duplicated names!');
+
+
+//list.php -> main.tpl
+define('_REPO_MAIN_TITLE', 'New template');
+define('_REPO_MAIN_FILE_WARN', 'File not uploaded');
+define('_REPO_MAIN_TYPE_WARN', 'Uploaded file type is not .ott or .ots');
+define('_REPO_MAIN_CATEGORY_WARN', 'No category selected');
+define('_REPO_MAIN_NAME_WARN', 'Name required');
+define('_REPO_MAIN_API_NAME', 'Template API name');
+define('_REPO_MAIN_API_DESC', 'API template description');
+define('_REPO_MAIN_CATEGORY', 'Category');
+define('_REPO_MAIN_SHOW_CHECK', 'Show');
+define('_REPO_MAIN_SHOW', 'Show');
+define('_REPO_MAIN_HIDE', 'Hide');
+define('_REPO_MAIN_UPLOAD', 'Upload');
+define('_REPO_MAIN_UPDATE', 'Update template file');
+define('_REPO_MAIN_SUBMIT', 'Submit');
+define('_REPO_MAIN_CLOSE', 'Close');
+
+
+// list.php -> list.tpl
+define('_REPO_LIST_TPL_TITLE_ALL', 'All reports');
+define('_REPO_LIST_TPL_TITLE_DEPARTMENT', 'Reports for current department');
+define('_REPO_LIST_TPL_DEPARTMENT', 'Category');
+define('_REPO_LIST_TPL_ORDER_BY', 'Sorted by');
+define('_REPO_LIST_TPL_DEPARTMENT', 'Department category');
+define('_REPO_LIST_CALLED', 'Called frequency');
+define('_REPO_LIST_UPDATETIMES', 'Update frequency');
+define('_REPO_LIST_LAST_UPDATE', 'Laste updated time');
+define('_REPO_LIST_JSON_EXAMPLE', 'Send JSON example description');
+define('_REPO_LIST_YAML_EXAMPLE', 'YAML format description');
+define('_REPO_LIST_DOWNLOAD_TEMP', 'Download template');
+define('_REPO_LIST_DOWNLOAD_APIINFO', 'Download API information');
+define('_REPO_LIST_MODIFY', 'Modify');
+define('_REPO_LIST_DELETE', 'Delete');
+define('_REPO_LIST_SHARE', 'Share with...');
+define('_REPO_LIST_CHECK_MESSAGE', 'Check message');
+define('_REPO_LIST_LEAVE_MESSAGE', 'Leave message');
+define('_REPO_LIST_CREATE_BY', 'report');
+define('_REPO_LIST_SHARE_WITH_ME', 'Share with me');
+define('_REPO_LIST_FAIL_LIST', 'Failed list');
+
+// list.php -> dialog.tpl
+define('_REPO_DIALOG_CONFIRM_DELETE', 'Confirm deletion?');
+define('_REPO_DIALOG_FAIL_DELETE_YES', 'Yes');
+define('_REPO_DIALOG_FAIL_DELETE_CANCEL', 'Cancel');
+define('_REPO_DIALOG_FAIL_DIALOG', 'Failed list');
+define('_REPO_DIALOG_API_NAME', 'API name');
+define('_REPO_DIALOG_API_URL', 'API URL');
+define('_REPO_DIALOG_ALTER_COPY', 'Copied');
+define('_REPO_DIALOG_YAML_EXPLAIN', 'YAML format description');
+define('_REPO_DIALOG_JSON_EXPLAIN', 'Json format description');
+define('_REPO_DIALOG_CLOSE', 'Close');
+define('_REPO_DIALOG_MODIFY_DATA', 'Modify data');
+define('_REPO_DIALOG_SHARE', 'Share with...');
+define('_REPO_DIALOG_YAML_EXAMPLE', 'YAML example');
+define('_REPO_DIALOG_JSON_EXAMPLE', 'Json example');
